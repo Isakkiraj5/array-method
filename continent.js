@@ -13,20 +13,12 @@ req.onload = function () {
   const pop = flag.filter((item) => {
     return item.population < 200000;
   });
-  console.log(pop);
+  console.log("population less than 200000",pop);
 
-  const curr = flag.map((item) => {
-    return item.currencies;
-  });
-  console.log("Currencies", curr);
 
   // reduce
-  const value = flag.map((item) => {
-    return item.population;
-  });
-
-  const rec = value.reduce((acc, val) => {
-    return acc + val;
+  const rec = flag.reduce((acc, val) => {
+    return acc + val.population;
   }, 0);
   console.log("Total population", rec);
 
